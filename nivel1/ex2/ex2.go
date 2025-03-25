@@ -20,4 +20,6 @@ var z bool
 func main() {
 	fmt.Printf("%v\n%v\n%v\n", x, y, z)
 	fmt.Println("Chamam-se valores 0")
+        fmt.Println("testando")
+        
 }
