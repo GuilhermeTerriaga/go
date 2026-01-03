@@ -17,4 +17,6 @@ func main() {
 	fmt.Printf("pont: %v\n", pont) // aqui mostra apenas o endereco de memória do ponteiro
 	var1++
 	fmt.Printf("pont: %v\n", *pont) // aqui usando o * a gente manda o ponteiro buscar o valor do endereço
+	pont2 := &pont
+	fmt.Printf("pont2: %v\n", **pont2) // ponteiro de ponteiro? hahahaha
 }
