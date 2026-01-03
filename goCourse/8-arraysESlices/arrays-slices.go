@@ -30,4 +30,18 @@ func main() {
 
 	arr2[1] = 42
 	fmt.Printf("slice2: %v\n", slice2) // ele é um ponteiro!
+
+	// arrays internos
+	slice3 := make([]float32, 10, 11) // cria um array e referencia ele internamente
+	fmt.Printf("slice3 len: %v, cap: %v\n%v\n", len(slice3), cap(slice3), slice3)
+	slice3 = append(slice3, 10)
+	fmt.Printf("slice3 len: %v, cap: %v\n%v\n", len(slice3), cap(slice3), slice3)
+	slice3 = append(slice3, 10)
+	fmt.Printf("slice3 len: %v, cap: %v\n%v\n", len(slice3), cap(slice3), slice3)
+	// conforme crescimento do slice, a lang se ajusta para aumentar o tamanho, o que evita uma quebra mas
+	// pode levar a um slice enorme e risco de memory leak!!! usar com cuidado
+	slice4 := make([]float32, 5) // nesse momento o slice tem cap 5
+	fmt.Printf("slice4 len: %v, cap: %v\n%v\n", len(slice4), cap(slice4), slice4)
+	slice4 = append(slice4, 10) // aqui foi para 12 pois add 10 e expande fazendo len * 2
+	fmt.Printf("slice4 len: %v, cap: %v\n%v\n", len(slice4), cap(slice4), slice4)
 }
