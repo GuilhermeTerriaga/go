@@ -29,5 +29,5 @@ func main() {
 	fmt.Printf("slice2: %v\n", slice2)
 
 	arr2[1] = 42
-	fmt.Printf("slice2: %v\n", slice2)
+	fmt.Printf("slice2: %v\n", slice2) // ele é um ponteiro!
 }
