@@ -42,6 +42,9 @@ func main() {
 	// pode levar a um slice enorme e risco de memory leak!!! usar com cuidado
 	slice4 := make([]float32, 5) // nesse momento o slice tem cap 5
 	fmt.Printf("slice4 len: %v, cap: %v\n%v\n", len(slice4), cap(slice4), slice4)
-	slice4 = append(slice4, 10) // aqui foi para 12 pois add 10 e expande fazendo len * 2
+	slice4 = append(slice4, 10) // aqui foi para 12 pois é sempre o len * 2
 	fmt.Printf("slice4 len: %v, cap: %v\n%v\n", len(slice4), cap(slice4), slice4)
+
+
+
 }
