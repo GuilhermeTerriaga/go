@@ -19,4 +19,10 @@ func main() {
 	for chave := range usuarios2 {
 		fmt.Println(chave)
 	}
+	delete(usuarios2, "curso")
+	fmt.Printf("usuarios2: %v\n", usuarios2)
+	usuarios2["corCabelo"] = map[string] string{
+		"cor": "castanho",
+	}
+	fmt.Printf("usuarios2: %v\n", usuarios2)
 }
