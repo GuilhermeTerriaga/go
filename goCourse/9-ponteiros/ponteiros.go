@@ -12,7 +12,7 @@ func main() {
 
 	fmt.Println(var1, var2)
 	var pont *int
-	pont = &var1
+	pont = &var1 // aqui passa a referencia para o endereco de memória
 
 	fmt.Printf("pont: %v\n", pont) // aqui mostra apenas o endereco de memória do ponteiro
 	var1++
