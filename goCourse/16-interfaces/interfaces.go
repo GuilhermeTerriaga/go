@@ -1,20 +1,17 @@
 package main
 
-import "fmt" 
-import "math"
-
+import (
+	"fmt"
+	"math"
+)
 
 type forma interface{
 	area() float64
 }
 
-func escreverArea(f forma){
-	fmt.Printf("A área da forma é %0.2f\n", f.area())
-}
-
 type retangulo struct {
-	altura float64
-	largura float64 
+	altura  float64
+	largura float64
 }
 
 type circulo struct {
@@ -27,6 +24,10 @@ func (r retangulo) area() float64{
 
 func (c circulo) area() float64{
 	return math.Pow(c.raio, 2)* math.Pi
+}
+
+func escreverArea(f forma){
+	fmt.Printf("A area da forma é %0.2f\n", f.area())
 }
 
 func main(){
