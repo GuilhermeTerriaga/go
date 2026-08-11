@@ -5,19 +5,18 @@ import "fmt"
 func main() {
 	tarefas := make(chan int, 45)
 	results := make(chan int, 45)
-	go worker(tarefas, results)
-	go worker(tarefas, results)
-	go worker(tarefas, results)
-	go worker(tarefas, results)
-	go worker(tarefas, results)
-	go worker(tarefas, results)
 	for i := range 45 {
 		tarefas <- i
 	}
 	close(tarefas)
+	go worker(tarefas, results)
+	go worker(tarefas, results)
+	go worker(tarefas, results)
+	go worker(tarefas, results)
+	go worker(tarefas, results)
+	go worker(tarefas, results)
 
 	for result := range results {
-		// result := <-results
 		fmt.Println(result)
 	}
 }
