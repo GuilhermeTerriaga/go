@@ -6,7 +6,11 @@ import (
 )
 
 func main() {
-	escrever()
+	canal := escrever("textoo")
+
+	for range 10 {
+		fmt.Println(<-canal)
+	}
 }
 
 func escrever(texto string) <-chan string {
